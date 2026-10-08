@@ -35,4 +35,9 @@ return [
         ],
     ],
 
+    'admin_gate' => [
+        'secret' => env('ADMIN_GATE_SECRET'),
+        'pin_hash' => env('ADMIN_PIN_HASH'),
+    ],
+
 ];
