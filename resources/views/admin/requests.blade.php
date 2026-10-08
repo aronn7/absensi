@@ -1,0 +1,3 @@
+@extends('layouts.app')
+@section('title','Permohonan Izin')
+@section('content')<div class="page-heading"><div><div class="eyebrow">PENDAMPINGAN MURID</div><h1>Permohonan Izin / Sakit</h1><p>Pemeriksaan administratif seluruh permohonan murid.</p></div></div><section class="panel"><form class="toolbar"><x-field name="q" label="Cari murid" :value="request('q')"/><x-select name="status" label="Status" :options="['PENDING'=>'Pending','DISETUJUI'=>'Disetujui','DITOLAK'=>'Ditolak']" :value="request('status')" placeholder="Semua status"/><button class="btn secondary">Filter</button></form><x-absence-list :rows="$rows" :review="true"/><div class="pagination">{{ $rows->links() }}</div></section>@endsection

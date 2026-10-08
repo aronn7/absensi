@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Offline · Absensi Digital</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+            background: #f5f7f5;
+            color: #25493b;
+            display: grid;
+            place-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px
+        }
+
+        main {
+            max-width: 440px;
+            text-align: center
+        }
+
+        .badge {
+            display: inline-grid;
+            place-items: center;
+            width: 64px;
+            height: 64px;
+            border-radius: 18px;
+            background: #087b68;
+            color: #fff;
+            font-size: 28px;
+            margin-bottom: 14px
+        }
+
+        h1 {
+            font-size: 22px;
+            margin: 0 0 8px
+        }
+
+        p {
+            color: #6b8173;
+            line-height: 1.7;
+            margin: 0 0 18px
+        }
+
+        button {
+            background: #087b68;
+            color: #fff;
+            border: 0;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 15px;
+            cursor: pointer
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="badge">&#128246;</div>
+        <h1>Tidak ada koneksi</h1>
+        <p>Absensi membutuhkan koneksi internet untuk mencatat kehadiran secara langsung. Periksa jaringan Anda, lalu
+            coba lagi.</p>
+        <button onclick="location.reload()">Coba Lagi</button>
+    </main>
+</body>
+
+</html>

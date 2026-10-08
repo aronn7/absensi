@@ -1,0 +1,2 @@
+@if(session('success'))<div class="alert toast" role="status"><span>{{ session('success') }}</span><button type="button" data-dismiss aria-label="Tutup notifikasi"><x-icon name="x"/></button></div>@endif
+@if($errors->any())<div class="alert error" role="alert"><strong>Periksa kembali data Anda.</strong><ul class="mt-2 list-disc pl-4">@foreach($errors->all() as $error)<li>{{ $error }}</li>@endforeach</ul></div>@endif

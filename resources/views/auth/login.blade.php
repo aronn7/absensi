@@ -1,0 +1,7 @@
+@extends('layouts.guest')
+@section('title','Login '.['admin'=>'Admin','teacher'=>'Guru','student'=>'Murid'][$role])
+@section('content')<a href="{{ route('login') }}" class="text-link inline-flex items-center gap-2 mb-8"><x-icon name="arrow-left"/> Pilih peran lain</a><div class="eyebrow">RUANG {{ ['admin'=>'ADMIN','teacher'=>'GURU','student'=>'MURID'][$role] }}</div><h1>Senang melihat Anda.</h1><p>Masuk untuk melanjutkan aktivitas sekolah.</p><form method="post" action="{{ route('login.store',$role) }}" class="guest-form">@csrf
+<x-field name="identity" :label="['admin'=>'ID Admin','teacher'=>'ID atau nama lengkap guru','student'=>'Email murid'][$role]" :type="$role==='student'?'email':'text'" required autofocus autocomplete="username"/>
+@if($role==='student')<x-field name="nisn" label="NISN" inputmode="numeric" minlength="10" maxlength="10" pattern="[0-9]{10}" required hint="10 digit NISN yang terdaftar di sekolah."/>@endif
+<div class="field"><label for="password">Password / PIN pribadi</label><div class="password-wrap"><input name="password" id="password" type="password" required autocomplete="current-password"><button type="button" class="icon-button" data-password-toggle aria-label="Tampilkan password"><x-icon name="eye"/></button></div></div>
+<button class="btn" type="submit">Masuk ke dashboard <x-icon name="arrow-right"/></button></form><p class="!text-xs !mt-6 !mb-0">Lupa password? Hubungi admin sekolah untuk reset akun.</p>@endsection
